@@ -25,3 +25,6 @@ def loadArtist(artistname):
         # The ',' option signals the use of a comma for a thousands separator.
         track.playback_count = "{:,}".format(track.playback_count)
     return render_template("artist.html", artist=artistResponse, tracks=tracksResponse)
+
+if __name__ == "__main__":
+    app.run()
