@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ artist.username }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+    <br />
+    <div class="container">
+        <h1 class="text-center">
+            Top played tracks for: {{ artist.username }}
+        </h1>
+    </div>
+    <br />
+    <div class="container">
+        <ul class="list-group">
+        {% for track in tracks %}
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-2">
+                        <image class="media-object" src="{{ track.artwork_url }}" />
+                    </div>
+                    <div class="col-7 d-flex align-items-center">
+                        <a href="{{ track.permalink_url }}">{{ track.title }}</a>
+                    </div>
+                    <div class="col text-right d-flex align-items-center">
+                        {{ track.playback_count }} plays
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

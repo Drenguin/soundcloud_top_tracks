@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ searchName }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+    <br />
+    <div class="container">
+        <form class="input-group" method="GET" action="/search/results">
+            <input type="text" class="form-control" name="artistName" placeholder="Search for another artist...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Search</button>
+            </span>
+        </form><!-- /input-group -->
+    </div>
+    <br />
+    <div class="container">
+        <ul class="list-group">
+        {% for artist in artists %}
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-2">
+                        <image class="media-object" src="{{ artist.avatar_url }}" />
+                    </div>
+                    <div class="col-7 d-flex align-items-center">
+                        <a href="/artist/{{ artist.permalink }}">{{ artist.username }}</a>
+                    </div>
+                    <div class="col text-right d-flex align-items-center">
+                        {{ artist.followers_count }} followers
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
