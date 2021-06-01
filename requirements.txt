@@ -27,7 +27,7 @@ SecretStorage==2.3.1
 simplejson==3.13.2
 six==1.11.0
 ./soundcloud-python
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.2.0
 virtualenv-clone==0.3.0
 Werkzeug==0.14.1
